@@ -32,8 +32,6 @@ module.exports = class DepthCalculator {
        if (haveArray>count){
        count = haveArray;
        }
-console.log(i);
-           console.log(count);
    }
   }
 
