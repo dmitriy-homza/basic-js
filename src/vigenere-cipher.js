@@ -1,7 +1,7 @@
 class VigenereCipheringMachine {
-    toSquare () {
-        
-    }
+    constructor(bool) {
+        this.reverse = bool;
+      }
 
     encrypt(message, key) {
         let alphabet = [['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']];   
@@ -41,7 +41,12 @@ class VigenereCipheringMachine {
             }
 
         });
-        return messageCrypt.join('').toUpperCase();
+        if (this.reverse===false) {
+            return messageCrypt.reverse().join('').toUpperCase();
+        }
+        else {
+            return messageCrypt.join('').toUpperCase();
+        }
     }
 
     decrypt(message, key) {
@@ -82,7 +87,12 @@ class VigenereCipheringMachine {
             }
 
         });
-        return messageCrypt.join('').toUpperCase();
+        if (this.reverse===false) {
+            return messageCrypt.reverse().join('').toUpperCase();
+        }
+        else {
+            return messageCrypt.join('').toUpperCase();
+        }
     }
 }
 
