@@ -1,6 +1,8 @@
+const CustomError = require("../extensions/custom-error");
+
 module.exports = class DepthCalculator {
-    calculateDepth(arr) {
-        /*
+  calculateDepth(arr) {
+    /*
         let object = {
             arr: array,
         };
@@ -23,18 +25,18 @@ module.exports = class DepthCalculator {
      return z;
     }
     */
-   let count = 0;
-   let haveArray = 1;
+    let count = 0;
+    let haveArray = 1;
 
-  for (let i of arr) {
-   if (Array.isArray(i))  {
-       haveArray=this.calculateDepth(i);
-       if (haveArray>count){
-       count = haveArray;
-       }
-   }
+    for (let i of arr) {
+      if (Array.isArray(i)) {
+        haveArray = this.calculateDepth(i);
+        if (haveArray > count) {
+          count = haveArray;
+        }
+      }
+    }
+
+    return ++count;
   }
-
-  return ++count;
-   }
 };
